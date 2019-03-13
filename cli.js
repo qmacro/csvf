@@ -8,10 +8,28 @@ const optionDefinitions = [
 	{ name: 'verbose', alias: 'v', type: Boolean },
 	{ name: 'input', alias: 'i', type: String, defaultOption: true },
 	{ name: 'output', alias: 'o', type: String, defaultValue: '_out.csv' },
-	{ name: 'fields', type: String, multiple: true }
+	{ name: 'fields', type: String, multiple: true },
+	{ name: 'help', alias: 'h', type: Boolean }
+
 ]
 const options = require('command-line-args')(optionDefinitions)
 const log = (isVerbose => x => isVerbose && console.log(">>", x))(options.verbose)
+
+if (options.help || !options.input) {
+	console.log(`Usage: csvf [options]
+Options:
+	-i, --input    Input CSV file (mandatory)
+	-o, --output   Output CSV file (defaults to _out.csv)
+	-f, --fields   List of fields to output (space separated)
+
+	-h, --help     Shows this help
+	-v, --verbose  Talkative mode
+
+Example:
+	csvf -i data.csv -f supplierID companyName city -o smaller.csv
+`)
+	process.exit(1)
+}
 
 /* This 'indices' function will return a list of indices for
    values (supplied in 'fields') in a reference array (in 'ref').
