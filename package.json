@@ -1,13 +1,13 @@
 {
   "name": "csvf",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple CSV filter",
+  "main": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "DJ Adams",
+  "license": "Apache 2.0",
   "bin": {
     "csvf": "./cli.js"
   },
