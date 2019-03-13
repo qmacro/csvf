@@ -1,0 +1,21 @@
+{
+  "name": "csvf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "csvf": "./cli.js"
+  },
+  "dependencies": {
+    "@sap/cds": "^3.5.2",
+    "command-line-args": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
